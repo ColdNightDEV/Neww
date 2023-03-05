@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "../app/globals.css";
 import Logo from "../../public/assets/Logo.png";
+import Link from "next/link";
 // import { useState } from "react";
 
 const extra = () => {
@@ -75,7 +76,7 @@ const extra = () => {
             type="submit"
             className="w-[279px] md:w-[559px] bg-yellow-300 mt-[40px] p-4 rounded-md"
           >
-            Submit
+            <Link href={"/thankyou"}>Submit</Link>
           </button>
         </form>
       </div>
