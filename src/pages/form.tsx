@@ -21,7 +21,7 @@ const extra = () => {
         priority
       />
       <div className="text-black bg-white pb-[200px] w-[327px] h-[443px] md:w-[643px] md:h-[513px] mt-10">
-        <form action="/api/form" method="post" className="mx-6 md:mx-10">
+        <form action="/form" method="post" className="mx-6 md:mx-10">
           <h1 className="text-center mt-5 font-bold text-[18px] md:text-[20px]">
             Join the Gnpay waitlist
           </h1>
