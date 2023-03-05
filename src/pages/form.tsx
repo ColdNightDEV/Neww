@@ -1,16 +1,16 @@
 import Image from "next/image";
 import "../app/globals.css";
 import Logo from "../../public/assets/Logo.png";
-import { useState } from "react";
+// import { useState } from "react";
 
 const extra = () => {
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
 
-  const handleChange = (event) => {
-    const result = event.target.value.replace(/\D/g, "");
+  // const handleChange = (Event) => {
+  //   const result = Event.target.value.replace(/\D/g, "");
 
-    setValue(result);
-  };
+  //   setValue(result);
+  // };
 
   return (
     <div className="w-screen h-screen flex flex-col items-center bg-[#08002A]">
@@ -60,7 +60,7 @@ const extra = () => {
               Phone Number
             </label>
             <input
-              type="text"
+              type="number"
               name="Pnumber"
               id="Pnumber"
               placeholder="Enter your Phone Number: "
@@ -68,8 +68,6 @@ const extra = () => {
               required
               minLength={11}
               maxLength={11}
-              value={value}
-              onChange={handleChange}
             />
           </div>
           {/*  */}
