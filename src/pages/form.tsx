@@ -2,6 +2,7 @@ import Image from "next/image";
 import "../app/globals.css";
 import Logo from "../../public/assets/Logo.png";
 import Link from "next/link";
+import Router from "next/router";
 // import { useState } from "react";
 
 const extra = () => {
@@ -15,14 +16,16 @@ const extra = () => {
 
   return (
     <div className="w-screen h-screen flex flex-col items-center bg-[#08002A]">
-      <Image
-        src={Logo}
-        className="h-[75px] w-[240px] mx-auto mt-6"
-        alt="logo"
-        priority
-      />
+      <Link href={"/"}>
+        <Image
+          src={Logo}
+          className="h-[40px] w-[130px] md:h-[75px] md:w-[240px] mx-auto mt-6 cursor-pointer"
+          alt="logo"
+          priority
+        />
+      </Link>
       <div className="text-black bg-white pb-[200px] w-[327px] h-[443px] md:w-[643px] md:h-[513px] mt-10">
-        <form action="" className="mx-6 md:mx-10">
+        <form action="/thankyou" className="mx-6 md:mx-10">
           <h1 className="text-center mt-5 font-bold text-[18px] md:text-[20px]">
             Join the Gnpay waitlist
           </h1>
@@ -72,12 +75,15 @@ const extra = () => {
             />
           </div>
           {/*  */}
+          {/* <Link href={"/thankyou"}> */}
           <button
             type="submit"
+            onSubmit={() => Router.push("/thankyou")}
             className="w-[279px] md:w-[559px] bg-yellow-300 mt-[40px] p-4 rounded-md"
           >
-            <Link href={"/thankyou"}>Submit</Link>
+            Submit
           </button>
+          {/* </Link> */}
         </form>
       </div>
     </div>

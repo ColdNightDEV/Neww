@@ -11,7 +11,7 @@ const thankyou = (props: Props) => {
       <div>
         <Image
           src={Logo}
-          className="h-[75px] w-[240px] mx-auto mt-6"
+          className="h-[40px] w-[130px] md:h-[75px] md:w-[240px] mx-auto mt-6 cursor-pointer"
           alt="logo"
         />
       </div>

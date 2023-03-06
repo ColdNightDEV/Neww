@@ -6,9 +6,9 @@ type Props = {};
 
 const Services = (props: Props) => {
   return (
-    <div className="w-screen text-white flex flex-col justify-center items-center">
+    <div className="w-screen text-white flex flex-col justify-center items-center mt-[140px]">
       {/*  */}
-      <div className="text-center mt-30 md:mt-10 mx-2">
+      <div className="text-center mx-2">
         <h1 className="text-[24px] md:text-[40px] font-bold">Our Services</h1>
         <p className="text-[14px] md:text-[20px] w-[288px] md:w-[378px] font-normal md:font-semibold">
           A platform for accepting payment, making payments and paying bills

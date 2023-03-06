@@ -16,7 +16,7 @@ const Extra = (props: Props) => {
       <div className="px-2 mx-3 md:mx-6 text-left">
         {/* Sections */}
         <div className="pb-10 bg-[#261F43] mt-3 lg:mt-1 px-3">
-          <h1 className="mx-3 text-[14px] font-bold pt-4">
+          <h1 className="mx-3 text-[14px] font-bold pt-4 pb-3">
             What is GNPay Africa?
           </h1>
           <p className=" mx-3 w-[280px] leading-[18px] md:w-[556px]">
@@ -27,7 +27,7 @@ const Extra = (props: Props) => {
 
         {/* Sections */}
         <div className="pb-10 bg-[#261F43] mt-3 lg:mt-1 px-3">
-          <h1 className="mx-3 text-[14px] font-bold pt-4">
+          <h1 className="mx-3 text-[14px] font-bold pt-4 pb-3">
             What are the benefits of joining the waitlist?
           </h1>
           <p className="mx-3 w-[300px] leading-[18px] md:w-[556px]">
@@ -39,7 +39,7 @@ const Extra = (props: Props) => {
 
         {/* Sections */}
         <div className="pb-10 bg-[#261F43] mt-3 lg:mt-1 px-3">
-          <h1 className="mx-3 text-[14px] font-bold pt-4">
+          <h1 className="mx-3 text-[14px] font-bold pt-4 pb-3">
             When will the GNPay Africa mobile app launch?
           </h1>
           <p className="mx-3 w-[300px] leading-[18px] md:w-[556px]">
@@ -51,7 +51,7 @@ const Extra = (props: Props) => {
 
         {/* Sections */}
         <div className="pb-10 bg-[#261F43] mt-3 lg:mt-1 px-3">
-          <h1 className="mx-3 text-[14px] font-bold pt-4">
+          <h1 className="mx-3 text-[14px] font-bold pt-4 pb-3">
             How do I sign up for the BNPL platform?
           </h1>
           <p className="mx-3 w-[300px] leading-[18px] md:w-[556px]">
