@@ -36,9 +36,9 @@ export default function Form({ _id }) {
       setHasSubmitted(true);
     } catch (err) {
       setFormData(err);
-      router.push('/error')
+      // router.push('/error')
     }
-    router.push('/thankyou')
+    // router.push('/thankyou')
   };
 
   if (isSubmitting) {
