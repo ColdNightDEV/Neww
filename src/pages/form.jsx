@@ -36,9 +36,9 @@ export default function Form({ _id }) {
       setHasSubmitted(true);
     } catch (err) {
       setFormData(err);
-      // router.push('/error')
+      router.push('/error')
     }
-    // router.push('/thankyou')
+    router.push('/thankyou')
   };
 
   if (isSubmitting) {
@@ -123,7 +123,7 @@ export default function Form({ _id }) {
           {/* <Link href={"/thankyou"}> */}
           <button
             type="submit"
-            onSubmit={() => Router.push("/thankyou")}
+            // onSubmit={() => Router.push("/thankyou")}
             className="w-[279px] md:w-[559px] bg-yellow-300 mt-[40px] p-4 rounded-md"
           >
             Submit
