@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import Logo from "../../public/assets/Logo.png";
 import Link from "next/link";
-import Router, { useRouter } from "next/router";
+// import Router, { useRouter } from "next/router";
 import "../app/globals.css";
 import { useState } from "react";
 // import Router from "next/router";
@@ -12,7 +12,7 @@ import { useState } from "react";
 export default function Form({ _id }) {
   const [formData, setFormData] = useState();
 
-  const router = useRouter()
+  // const router = useRouter()
   // Sets up our form states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -36,9 +36,9 @@ export default function Form({ _id }) {
       setHasSubmitted(true);
     } catch (err) {
       setFormData(err);
-      router.push('/error')
+      // router.push('/error')
     }
-    router.push('/thankyou')
+    // router.push('/thankyou')
   };
 
   if (isSubmitting) {
