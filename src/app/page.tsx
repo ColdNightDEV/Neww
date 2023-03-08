@@ -2,12 +2,12 @@
 // import Image from "next/image";
 // import styles from "./page.module.css";
 // import Link from "next/link";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Extra from "@/components/Extra";
-import Coming from "@/components/Coming";
-import Contact from "@/components/Contact";
+import Header from "@/app/components/Header";
+import Hero from "@/app/components/Hero";
+import Services from "@/app/components/Services";
+import Extra from "@/app/components/Extra";
+import Coming from "@/app/components/Coming";
+import Contact from "@/app/components/Contact";
 
 // const inter = Inter({ subsets: ["latin"] });
 
