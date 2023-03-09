@@ -12,13 +12,15 @@ import { useState } from "react";
 export default function Form({ _id }) {
   const [formData, setFormData] = useState();
 
+// ----- 1//03n2NRB-VwJFHCgYIARAAGAMSNwF-L9IrJw92V4J_Ffv29GnJjm412vx4hwglVs4uf3JYycSztvposJDOZ3PFO83VjmNgP0xe_Ug
+
   // const router = useRouter()
   // Sets up our form states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   // Prepares the functions from react-hook-form
-  const { register, handleSubmit, watch, setError } = useForm();
+  const { register, handleSubmit } = useForm();
 
   // Function for handling the form submission
   const onSubmit = async (data) => {
@@ -27,10 +29,12 @@ export default function Form({ _id }) {
     setFormData(data);
 
     try {
-      await fetch("/api/createUser", {
+      await fetch("/api/form", {
         method: "POST",
         body: JSON.stringify(data),
-        type: "application/json",
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       setIsSubmitting(false);
       setHasSubmitted(true);
@@ -70,7 +74,7 @@ export default function Form({ _id }) {
 
           {/*  */}
           <div className="mt-[40px] md:mt-[70px]">
-            <label htmlFor="Fname" className="text-[14px] md:text-[16px]">
+            <label htmlFor="name" className="text-[14px] md:text-[16px]">
               Full Name
             </label>
             <input
@@ -87,7 +91,7 @@ export default function Form({ _id }) {
           </div>
           {/*  */}
           <div className="mt-[20px] md:mt-[40px]">
-            <label htmlFor="Email" className="text-[14px] md:text-[16px]">
+            <label htmlFor="email" className="text-[14px] md:text-[16px]">
               Email Address
             </label>
             <input
@@ -103,20 +107,20 @@ export default function Form({ _id }) {
           </div>
           {/*  */}
           <div className="mt-[20px] md:mt-[40px]">
-            <label htmlFor="Pnumber" className="text-[14px] md:text-[16px]">
+            <label htmlFor="number" className="text-[14px] md:text-[16px]">
               Phone Number
             </label>
             <input
               type="number"
-              name="phone"
-              id="phone"
+              name="number"
+              id="number"
               placeholder="Enter your Phone Number: "
               className="bg-[#F6F6F6] w-[279px] md:w-[559px] py-2 px-3 text-[12px]"
               minLength={11}
               maxLength={14}
               required={true}
               value={_id}
-              {...register("phone")}
+              {...register("number")}
             />
           </div>
           {/*  */}
