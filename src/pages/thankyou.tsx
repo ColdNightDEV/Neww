@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Logo from "../../public/assets/Logo.png";
 import "../app/globals.css";
@@ -22,6 +23,11 @@ const thankyou = (props: Props) => {
           You have successfully joined the Gnpay Africa waitlist, sit back and
           wait for our updates.
         </p>
+        <Link href={"/"}>
+          <button className="text-[12px] p-2 ring-2 ring-white rounded-lg md:mt-3 mt-1 text-white bg-[#08002A]">
+            Go Back to Homepage
+          </button>
+        </Link>
       </div>
     </div>
   );

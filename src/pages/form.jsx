@@ -1,63 +1,40 @@
 // Import the library for collecting and organizing data from out form
-import { useForm } from "react-hook-form";
-
 import Image from "next/image";
 import Logo from "../../public/assets/Logo.png";
 import Link from "next/link";
-// import Router, { useRouter } from "next/router";
 import "../app/globals.css";
 import { useState } from "react";
-// import Router from "next/router";
+import { useRouter } from "next/router";
 
-export default function Form({ _id }) {
-  const [formData, setFormData] = useState();
+export default function Form() {
+  const router = useRouter();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
 
-// ----- 1//03n2NRB-VwJFHCgYIARAAGAMSNwF-L9IrJw92V4J_Ffv29GnJjm412vx4hwglVs4uf3JYycSztvposJDOZ3PFO83VjmNgP0xe_Ug
+  async function handleSubmit(event) {
+    event.preventDefault();
 
-  // const router = useRouter()
-  // Sets up our form states
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        number
+      })
+    });
 
-  // Prepares the functions from react-hook-form
-  const { register, handleSubmit } = useForm();
-
-  // Function for handling the form submission
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-
-    setFormData(data);
-
-    try {
-      await fetch("/api/form", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      setIsSubmitting(false);
-      setHasSubmitted(true);
-    } catch (err) {
-      setFormData(err);
-      // router.push('/error')
+    if (response.ok) {
+      router.push('/thankyou');
     }
-    // router.push('/thankyou')
-  };
-
-  if (isSubmitting) {
-    // Returns a "Submitting comment" state if being processed
-    console.log("Submitting comment….....") 
-  }
-  if (hasSubmitted) {
-    // Returns the data that the user submitted for them to preview after submission
-    return (
-      console.log(`name: ${formData.name}, Email: ${formData.email}, Phone_Number: ${formData.phone} `)
-    )
   }
 
   return (
     <div className="w-screen h-screen flex flex-col items-center bg-[#08002A]">
+
       <Link href={"/"}>
         <Image
           src={Logo}
@@ -66,8 +43,10 @@ export default function Form({ _id }) {
           priority
         />
       </Link>
+
       <div className="text-black bg-white pb-[200px] w-[327px] h-[443px] md:w-[643px] md:h-[513px] mt-10">
-        <form onSubmit={handleSubmit(onSubmit)} className="mx-6 md:mx-10">
+        
+        <form onSubmit={handleSubmit} className="mx-6 md:mx-10">
           <h1 className="text-center mt-5 font-bold text-[18px] md:text-[20px]">
             Join the Gnpay waitlist
           </h1>
@@ -85,8 +64,8 @@ export default function Form({ _id }) {
               className="bg-[#F6F6F6] w-[279px] md:w-[559px] py-2 px-3 text-[12px]"
               required={true}
               minLength={11}
-              value={_id}
-              {...register("name")}
+              value={name}
+              onChange={event => setName(event.target.value)}
             />
           </div>
           {/*  */}
@@ -101,8 +80,8 @@ export default function Form({ _id }) {
               placeholder="Enter your Email Address: "
               className="bg-[#F6F6F6] w-[279px] md:w-[559px] py-2 px-3 text-[12px]"
               required={true}
-              value={_id}
-              {...register("email")}
+              value={email}
+              onChange={event => setEmail(event.target.value)}
             />
           </div>
           {/*  */}
@@ -119,20 +98,16 @@ export default function Form({ _id }) {
               minLength={11}
               maxLength={14}
               required={true}
-              value={_id}
-              {...register("number")}
+              value={number}
+              onChange={event => setNumber(event.target.value)}
             />
           </div>
-          {/*  */}
-          {/* <Link href={"/thankyou"}> */}
           <button
             type="submit"
-            // onSubmit={() => Router.push("/thankyou")}
             className="w-[279px] md:w-[559px] bg-yellow-300 mt-[40px] p-4 rounded-md"
           >
             Submit
           </button>
-          {/* </Link> */}
         </form>
       </div>
     </div>
