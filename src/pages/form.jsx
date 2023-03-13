@@ -25,7 +25,7 @@ export default function Form() {
   function onSubmit(data) {
     axios
 
-      .post("https://eofso5zmhu9qj88.m.pipedream.net", JSON.stringify(data))
+      .post("https://eot6hbecer3bqsx.m.pipedream.net", JSON.stringify(data))
 
       .then((responce) => {
         setSuccessMessage(`Thanks for signing up for our waitlist`);
@@ -56,57 +56,57 @@ export default function Form() {
           {/* */}
 
           <div className="mt-[40px] md:mt-[70px]">
-            <label htmlFor="username" className="text-[14px] md:text-[16px]">
+            <label htmlFor="Username" className="text-[14px] md:text-[16px]">
               Full Name
             </label>
 
             <input
               type="text"
-              name="username"
-              id="username"
+              name="Username"
+              id="Username"
               placeholder="Enter your full name: "
               className="bg-[#F6F6F6] w-[279px] md:w-[559px] py-2 px-3 text-[12px]"
               required={true}
               minLength={11}
-              {...register("username")}
+              {...register("Username")}
             />
           </div>
 
           {/* */}
 
           <div className="mt-[20px] md:mt-[40px]">
-            <label htmlFor="email" className="text-[14px] md:text-[16px]">
+            <label htmlFor="Email" className="text-[14px] md:text-[16px]">
               Email Address
             </label>
 
             <input
               type="email"
-              name="email"
-              id="email"
+              name="Email"
+              id="Email"
               placeholder="Enter your Email Address: "
               className="bg-[#F6F6F6] w-[279px] md:w-[559px] py-2 px-3 text-[12px]"
               required={true}
-              {...register("email")}
+              {...register("Email")}
             />
           </div>
 
           {/* */}
 
           <div className="mt-[20px] md:mt-[40px]">
-            <label htmlFor="pnumber" className="text-[14px] md:text-[16px]">
+            <label htmlFor="Pnumber" className="text-[14px] md:text-[16px]">
               Phone Number
             </label>
 
             <input
-              type="pnumber"
-              name="pnumber"
+              type="Pnumber"
+              name="Pnumber"
               id="number"
               placeholder="Enter your Phone Number: "
               className="bg-[#F6F6F6] w-[279px] md:w-[559px] py-2 px-3 text-[12px]"
               minLength={11}
               maxLength={14}
               required={true}
-              {...register("pnumber")}
+              {...register("Pnumber")}
             />
           </div>
 
