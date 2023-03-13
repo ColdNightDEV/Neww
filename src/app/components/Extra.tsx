@@ -46,7 +46,7 @@ const Extra = (props: Props) => {
         {faq_list.map((faq, index) => (
           <button
             key={index}
-            className={`pb-3 md:pb-5 bg-[#261F43] mt-3 lg:mt-1 w-[550px] px-2 mx-4 md:mx-0 text-left`}
+            className={`pb-0 md:pb-5 bg-[#261F43] mt-3 lg:mt-1 w-[550px] px-2 mx-4 md:mx-0 text-left`}
             type="button"
             onClick={() => {
               setIsOpen(isOpen == index ? -1 : index);
@@ -64,7 +64,7 @@ const Extra = (props: Props) => {
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6 mx-4"
+                    className="w-6 h-6 mx-4"
                   >
                     <path
                       stroke-linecap="round"
@@ -79,7 +79,7 @@ const Extra = (props: Props) => {
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6 mx-4"
+                    className="w-6 h-6 mx-4"
                   >
                     <path
                       stroke-linecap="round"
@@ -94,7 +94,7 @@ const Extra = (props: Props) => {
             <p
               className={`${
                 isOpen == index ? "block" : "hidden"
-              } mx-2 w-[450px] leading-[18px] md:w-[540px] text-[12px] md:text-[15px] font-normal`}
+              } mx-2 w-[450px] leading-[18px] md:w-[540px] text-[12px] md:text-[15px] font-normal pb-4 text-gray-300`}
             >
               {faq.answer}
             </p>
