@@ -14,9 +14,7 @@ export default function Form() {
 
   const {
     register,
-
     handleSubmit,
-
     formState: { isSubmitting },
   } = useForm();
 
@@ -24,15 +22,11 @@ export default function Form() {
 
   function onSubmit(data) {
     axios
-
       .post("https://eot6hbecer3bqsx.m.pipedream.net", JSON.stringify(data))
-
       .then((responce) => {
         setSuccessMessage(`Thanks for signing up for our waitlist`);
       })
-
       .catch((e) => console.error(e));
-
     route.push("/thankyou");
   }
 
