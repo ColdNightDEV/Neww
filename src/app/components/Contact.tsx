@@ -9,7 +9,9 @@ const Contact = (props: Props) => {
   return (
     <div className="b-0 t-0 h-[500px] flex flex-col w-screen justify-center items-center mx-auto">
       <div className="mb-5">
-        <h1 className="text-[40px] font-bold underline">Contact Us</h1>
+        <h1 className="text-[40px] font-bold">
+          Contact <span className="text-[#FBCC22]">Us</span>
+        </h1>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center leading-[80px]">
         <div className="flex flex-col items-center mb-1 md:mx-5 mx-0 mt-5">
