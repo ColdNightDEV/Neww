@@ -44,7 +44,7 @@ const Coming = (props: Props) => {
           <Image
             src={Phone}
             alt="Phone Image"
-            className="w-[196px] h-[374px] md:w-[229px] md:h-[395px] lg:w-[360px] lg:h-[665.03px] mt-10 mb-20 p-0 md:p-1"
+            className="w-[196px] h-[374px] md:w-[229px] md:h-[395px] lg:w-[360px] lg:h-[665.03px] mt-10 mb-1 md:mb-20 p-0 md:p-1"
             priority
           />
         </div>
