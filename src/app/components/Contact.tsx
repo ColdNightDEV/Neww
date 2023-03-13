@@ -18,7 +18,7 @@ const Contact = (props: Props) => {
           <Image
             src={Phone}
             alt="Logo's"
-            className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] cursor-pointer"
+            className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] cursor-default md:cursor-pointer"
           />
           <p className="mx-10 mb-1 bg-[#261F43] font-bold mt-2 px-3 h-[50px] flex items-center rounded-md">
             <a href="tel:+23407063465586">07063465586</a>
@@ -28,7 +28,7 @@ const Contact = (props: Props) => {
           <Image
             src={Email}
             alt="Logo's"
-            className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] cursor-pointer"
+            className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] cursor-default md:cursor-pointer"
           />
           <p className="mx-5 mb-1 bg-[#261F43] font-bold mt-2 px-3 h-[50px] flex items-center rounded-md">
             <a href="mailto:info@gnpay.com.ng">info@gnpay.com.ng</a>

@@ -25,7 +25,7 @@ const Coming = (props: Props) => {
               Join the waitlist
             </button>
           </Link>
-          <div className="flex flex-col md:flex-row mt-5 cursor-pointer w-[380px] items-center">
+          <div className="flex flex-col md:flex-row mt-5 cursor-default md:cursor-pointer w-[380px] items-center">
             <Image
               src={Gplay}
               alt="Google play"
