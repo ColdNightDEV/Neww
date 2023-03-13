@@ -1,53 +1,47 @@
-import { MongoClient } from 'mongodb';
-
-const uri = process.env.MONGODB_URI;
-const dbName = process.env.MONGODB_DB;
-
-let cachedClient = null;
-let cachedDb = null;
-
-export async function connectToDatabase() {
-  if (cachedClient && cachedDb) {
-    return { client: cachedClient, db: cachedDb };
-  }
-
-  const client = await MongoClient.connect(uri, { useNewUrlParser: true, connectTimeoutMS: 30000, socketTimeoutMS: 30000 });
-  const db = client.db(dbName);
-
-  cachedClient = client;
-  cachedDb = db;
-
-  return { client, db };
-}
+import clientPromise from "../../../utils/mongodb";
 
 export default async function handler(req, res) {
 
-    res.setHeader('Access-Control-Allow-Origin', 'https://legaax.vercel.app/');
-    res.setHeader('Access-Control-Allow-Origin', 'https://legaax.vercel.app/api');
-    res.setHeader('Access-Control-Allow-Origin', 'https://legaax.vercel.app/api/signup');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-    // Handle preflight request
-    if (req.method === 'OPTIONS') {
-        res.status(200).end();
-        return;
-    }
-
-    // 
-    if (req.method === 'POST') {
-        const { name, email, number } = req.body;
-
-        const { db } = await connectToDatabase();
-            await db.collection('UserData').insertOne({
-            name,
-            email,
-            number
-        });
-
-        res.status(201).json({ message: 'User created' });
-    } else {
-        res.setHeader('Allow', ['POST']);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
-    }
+  const client = await clientPromise;
+  const db = client.db("users");
+  
+  switch (req.method) {
+    
+    case "POST":
+      let bodyObject = JSON.parse(req.body);
+      let myPost = await db.collection("users").insertOne(bodyObject);
+      res.json(myPost.ops[0]);
+      break;
+    
+      case "GET":
+      const allPosts = await db.collection("users").find({}).toArray();
+      res.json({ status: 200, data: allPosts });
+      break;
+  }
 }
+
+
+// import { MongoClient, ServerApiVersion } from 'mongodb'
+
+
+// export default function handler(res, req){
+  
+//   const body = req.body;
+
+//   const uri = "mongodb+srv://Emmanuel:<nYqNHNsoZAelOycl>@users.2a3og2i.mongodb.net/?retryWrites=true&w=majority";
+//   const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+//   client.connect(err => {
+//     const collection = client.db("users").collection("users");
+//     // perform actions on the collection object
+
+//     try {
+//       collection.insertOne(
+//         body.name,body.email,body.number
+//       )
+//     } catch (error) {
+//       console.err(error)
+//       res.json(error)
+//     }
+//     res.json(req.body)
+//   });
+// }
