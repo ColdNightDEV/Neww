@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "../../../public/assets/Logo.png";
+import Logo from "../../public/assets/Logo.png";
 import Link from "next/link";
 
 type Props = {};
@@ -17,7 +17,13 @@ const Header = (props: Props) => {
             priority
           />
         </div>
-        <div className="px-2 md:px-8"></div>
+        <div className="px-2 md:px-8">
+          <Link href={"/waitlist"}>
+            <button className="bg-[#FBCC22] px-[15px] py-[7px] md:px-[25px] md:py-[13px] text-[10px] md:text-[15px] rounded-sm">
+              Join the waitlist
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

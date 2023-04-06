@@ -9,6 +9,11 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
+export const metadata = {
+  title: "GNPay Africa Waitlist form",
+  description: "Created by Gnpay Africa",
+};
+
 export default function Form() {
   const route = useRouter();
 
