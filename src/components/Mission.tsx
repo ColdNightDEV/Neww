@@ -7,7 +7,7 @@ const Mission = (props: Props) => {
     <div className="text-white w-screen">
       <div className="w-full h-full flex flex-col md:justify-center items-center p-10 bg-[#08002A]">
         <div className="p-8">
-          <div className="m-3 px-5 py-8 font-bold rounded-lg bg-[#11073f] text-3xl">
+          <div className="m-3 md:px-5 px-2 py-6 md:py-8 font-bold rounded-lg bg-[#11073f] text-3xl text-center md:text-start">
             <h1>Our Mission</h1>
           </div>
         </div>
